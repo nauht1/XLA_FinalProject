@@ -13,6 +13,18 @@ def Negative(imgin):
             imgout[x,y] = s
     return imgout
 
+def Power(imgin):
+    M, N = imgin.shape
+    imgout = np.zeros((M,N), np.uint8)
+    gamma = 5.0
+    c = np.power(L-1,1-gamma)
+    for x in range(0, M):
+        for y in range(0, N):
+            r = imgin[x,y]
+            s = c*np.power(r,gamma)
+            imgout[x,y] = np.uint8(s)
+    return imgout
+
 def Logarithm(imgin):
     M, N = imgin.shape
     imgout = np.zeros((M,N), np.uint8)

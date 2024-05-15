@@ -9,37 +9,62 @@ import module.Chapter9 as c9
 
 st.set_page_config(page_title="Xử lý ảnh", page_icon="😃", layout="wide")
 
+sidebar_selection_box = st.sidebar.selectbox(
+    "Chọn chương",
+    ("Chương 3", "Chương 4", "Chương 5", "Chương 9")
+)
+
 st.markdown("# Xử lý ảnh")
 
 # Các tùy chọn xử lý ảnh
-options = [
-    "Negative", 
-    "Logarithm", 
-    "PiecewiseLinear", 
-    "Histogram", 
-    "HistEqual", 
-    "HistEqualColor", 
-    "LocalHist", 
-    "HistStat", 
-    "BoxFilter", 
-    "LowpassGauss", 
-    "Threshold", 
-    "MedianFilter", 
-    "Sharpen", 
-    "Gradient", 
-    "Spectrum", 
-    "FrequencyFilter", 
-    "DrawNotchRejectFilter", 
-    "RemoveMoire", 
-    "CreateMotionNoise", 
-    "DenoiseMotion", 
-    "DenoisestMotion",
-    "ConnectedComponent", 
-    "CountRice"
+c3_options = [
+    "1. Negative",
+    "2. Power",
+    "3. Logarithm", 
+    "4. PiecewiseLinear - Biến đổi tuyến tính", 
+    "5. Histogram", 
+    "6. HistEqual - Cân bằng histogram", 
+    "7. HistEqualColor - Cân bằng histogram - ảnh màu", 
+    "8. LocalHist", 
+    "9. HistStat", 
+    "10. BoxFilter - Làm mờ ảnh bằng Box", 
+    "11. LowpassGauss - Lọc Gaussian thấp tần số để làm mờ ảnh", 
+    "12. Threshold - Phân ngưỡng", 
+    "13. MedianFilter - Làm mờ ảnh và loại bỏ nhiễu bằng Median", 
+    "14. Sharpen - Tăng độ nét của ảnh bằng cách làm nổi bật các biên", 
+    "15. Gradient - Tính gradient để phát hiện biên của đối tượng"
+]
+
+c4_options = [
+    "1. Spectrum", 
+    "2. FrequencyFilter", 
+    "3. DrawNotchRejectFilter", 
+    "4. RemoveMoire"
+]
+
+c5_options = [
+    "1. CreateMotionNoise - Tạo nhiễu chuyển động", 
+    "2. DenoiseMotion - Loại bỏ nhiễu", 
+    "3. DenoisestMotion - Loại bỏ nhiễu chuyển động mạnh"
+]
+
+c9_options = [
+    "1. ConnectedComponent - Đếm thành phần liên thông", 
+    "2. CountRice - Đếm gạo"
 ]
 
 # Tạo selection box để chọn chức năng xử lý ảnh
-selected_option = st.selectbox("Chọn chức năng xử lý ảnh", options)
+if (sidebar_selection_box == "Chương 3"):
+    selected_option = st.selectbox("Chọn chức năng xử lý ảnh", c3_options)
+
+elif (sidebar_selection_box == "Chương 4"):
+    selected_option = st.selectbox("Chọn chức năng xử lý ảnh", c4_options)
+
+elif (sidebar_selection_box == "Chương 5"):
+    selected_option = st.selectbox("Chọn chức năng xử lý ảnh", c5_options)
+
+elif (sidebar_selection_box == "Chương 9"):
+    selected_option = st.selectbox("Chọn chức năng xử lý ảnh", c9_options)
 
 # Nút Open Image để chọn ảnh và hiển thị bản xem trước
 uploaded_file = st.file_uploader("Chọn một ảnh", type=["jpg", "jpeg", "png", "tif"])
@@ -59,73 +84,76 @@ if uploaded_file is not None:
     if process_button:
         # Xử lý ảnh theo chức năng đã chọn
         processed_img = None
-        if selected_option == "Negative":
+        if selected_option == c3_options[0]:
             processed_img = c3.Negative(img_array)
+        
+        elif selected_option == c3_options[1]:
+            processed_img = c3.Power(img_array)
 
-        elif selected_option == "Logarithm":
+        elif selected_option == c3_options[2]:
             processed_img = c3.Logarithm(img_array)
 
-        elif selected_option == "PiecewiseLinear":
+        elif selected_option == c3_options[3]:
             processed_img = c3.PiecewiseLinear(img_array)
 
-        elif selected_option == "Histogram":
+        elif selected_option == c3_options[4]:
             processed_img = c3.Histogram(img_array)
 
-        elif selected_option == "HistEqual":
+        elif selected_option == c3_options[5]:
             processed_img = c3.HistEqual(img_array)
 
-        elif selected_option == "HistEqualColor":
+        elif selected_option == c3_options[6]:
             processed_img = c3.HistEqualColor(img_array)
 
-        elif selected_option == "LocalHist":
+        elif selected_option == c3_options[7]:
             processed_img = c3.LocalHist(img_array)
 
-        elif selected_option == "HistStat":
+        elif selected_option == c3_options[8]:
             processed_img = c3.HistStat(img_array)
 
-        elif selected_option == "BoxFilter":
+        elif selected_option == c3_options[9]:
             processed_img = c3.BoxFilter(img_array)
 
-        elif selected_option == "LowpassGauss":
+        elif selected_option == c3_options[10]:
             processed_img = c3.LowpassGauss(img_array)
 
-        elif selected_option == "Threshold":
+        elif selected_option == c3_options[11]:
             processed_img = c3.Threshold(img_array)
 
-        elif selected_option == "MedianFilter":
+        elif selected_option == c3_options[12]:
             processed_img = c3.MedianFilter(img_array)
 
-        elif selected_option == "Sharpen":
+        elif selected_option == c3_options[13]:
             processed_img = c3.Sharpen(img_array)
 
-        elif selected_option == "Gradient":
+        elif selected_option == c3_options[14]:
             processed_img = c3.Gradient(img_array)
 
-        elif selected_option == "Spectrum":
+        elif selected_option == c4_options[0]:
             processed_img = c4.Spectrum(img_array)
 
-        elif selected_option == "FrequencyFilter":
+        elif selected_option == c4_options[1]:
             processed_img = c4.FrequencyFilter(img_array)
 
-        elif selected_option == "DrawNotchRejectFilter":
+        elif selected_option == c4_options[2]:
             processed_img = c4.DrawNotchRejectFilter(img_array)
 
-        elif selected_option == "RemoveMoire":
+        elif selected_option == c4_options[3]:
             processed_img = c4.RemoveMoire(img_array)
 
-        elif selected_option == "CreateMotionNoise":
+        elif selected_option == c5_options[0]:
             processed_img = c5.CreateMotionNoise(img_array)
 
-        elif selected_option == "DenoiseMotion":
+        elif selected_option == c5_options[1]:
             processed_img = c5.DenoiseMotion(img_array)
 
-        elif selected_option == "DenoisestMotion":
+        elif selected_option == c5_options[2]:
             processed_img = c5.DenoisestMotion(img_array)
 
-        elif selected_option == "ConnectedComponent":
+        elif selected_option == c9_options[0]:
             processed_img = c9.ConnectedComponent(img_array)
         
-        elif selected_option == "CountRice":
+        elif selected_option == c9_options[1]:
             processed_img = c9.CountRice(img_array)
 
         # Hiển thị ảnh sau khi xử lý (nếu có)
