@@ -12,7 +12,8 @@ show_pages(
         Page("main.py", "Home", "🏠"),
         Page("pages/face_detection.py", "Nhận diện khuôn mặt", "😃"),
         Page("pages/Xu_Ly_Anh.py", "Xử lý ảnh", "✅"),
-        Page("pages/object_detection.py", "Nhận diện trái cây", "🍎")
+        Page("pages/object_detection.py", "Nhận diện trái cây", "🍎"),
+        Page("pages/nhan_dang_chu_so_viet_tay.py", "Nhận dạng chữ số viết tay", "🔢")
     ]
 )
 
