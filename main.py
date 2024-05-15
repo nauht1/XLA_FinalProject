@@ -11,7 +11,8 @@ show_pages(
     [
         Page("main.py", "Home", "🏠"),
         Page("pages/face_detection.py", "Nhận diện khuôn mặt", "😃"),
-        Page("pages/Xu_Ly_Anh.py", "Xử lý ảnh", "✅")
+        Page("pages/Xu_Ly_Anh.py", "Xử lý ảnh", "✅"),
+        Page("pages/object_detection.py", "Nhận diện trái cây", "🍎")
     ]
 )
 

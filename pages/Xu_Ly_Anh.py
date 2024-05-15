@@ -13,11 +13,29 @@ st.markdown("# Xử lý ảnh")
 
 # Các tùy chọn xử lý ảnh
 options = [
-    "Negative", "Logarithm", "PiecewiseLinear", "Histogram", "HistEqual", "HistEqualColor", 
-    "LocalHist", "HistStat", "BoxFilter", "LowpassGauss", "Threshold", "MedianFilter", 
-    "Sharpen", "Gradient", "Spectrum", "FrequencyFilter", "DrawNotchRejectFilter", 
-    "RemoveMoire", "CreateMotionNoise", "DenoiseMotion", "DenoisestMotion",
-    "ConnectedComponent", "CountRice"
+    "Negative", 
+    "Logarithm", 
+    "PiecewiseLinear", 
+    "Histogram", 
+    "HistEqual", 
+    "HistEqualColor", 
+    "LocalHist", 
+    "HistStat", 
+    "BoxFilter", 
+    "LowpassGauss", 
+    "Threshold", 
+    "MedianFilter", 
+    "Sharpen", 
+    "Gradient", 
+    "Spectrum", 
+    "FrequencyFilter", 
+    "DrawNotchRejectFilter", 
+    "RemoveMoire", 
+    "CreateMotionNoise", 
+    "DenoiseMotion", 
+    "DenoisestMotion",
+    "ConnectedComponent", 
+    "CountRice"
 ]
 
 # Tạo selection box để chọn chức năng xử lý ảnh
