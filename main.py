@@ -27,3 +27,4 @@ st.markdown(
 )
 
 st.image("./images/welcome.jpg")
+st.rerun()
