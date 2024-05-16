@@ -2,10 +2,13 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import cv2
+import module.Logo as logo
 
 st.set_page_config(page_title="Nhận diện trái cây", page_icon="🍎", layout="wide")
 
 st.markdown("# Nhận diện trái cây 🍎")
+
+logo.add_logo()
 
 model = './models/yolov8n_trai_cay.onnx'
 filename_classes = './labels/object_detection_trai_cay_yolo.txt'
