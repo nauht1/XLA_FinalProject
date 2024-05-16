@@ -17,7 +17,8 @@ show_pages(
         Page("pages/Xu_Ly_Anh.py", "Xử lý ảnh", "✅"),
         Page("pages/object_detection.py", "Nhận diện trái cây", "🍎"),
         Page("pages/nhan_dang_chu_so_viet_tay.py", "Nhận dạng chữ số viết tay", "🔢"),
-        Page("pages/hand_tracking.py", "Đếm số ngón tay", "🙌")
+        Page("pages/hand_tracking.py", "Đếm số ngón tay", "🙌"),
+        Page("pages/detection_vehicle.py", "Nhận diện Biển số xe", "🚗")
     ]
 )
 

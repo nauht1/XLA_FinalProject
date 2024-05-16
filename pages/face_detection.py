@@ -4,7 +4,7 @@ from PIL import Image
 import time
 import tempfile
 from module.facedetection import detect_faces, visualize, load_models
-
+import module.Logo as logo
 st.set_page_config(page_title="Nhận diện khuôn mặt", page_icon="😃", layout="wide")
 st.markdown("# Nhận diện khuôn mặt")
 
@@ -17,7 +17,7 @@ try:
 except Exception as e:
     st.error(str(e))
     st.stop()
-
+logo.add_logo()
 start_button = st.button("Turn On Webcam")
 stop_button = st.button("Turn Off Webcam")
 uploaded_video = st.file_uploader("Upload a Video", type=["mp4"])
