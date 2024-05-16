@@ -6,6 +6,7 @@ import module.Chapter3 as c3
 import module.Chapter4 as c4
 import module.Chapter5 as c5
 import module.Chapter9 as c9
+import module.Logo as logo
 
 st.set_page_config(page_title="Xử lý ảnh", page_icon="😃", layout="wide")
 
@@ -13,6 +14,8 @@ sidebar_selection_box = st.sidebar.selectbox(
     "Chọn chương",
     ("Chương 3", "Chương 4", "Chương 5", "Chương 9")
 )
+
+logo.add_logo()
 
 st.markdown("# Xử lý ảnh")
 

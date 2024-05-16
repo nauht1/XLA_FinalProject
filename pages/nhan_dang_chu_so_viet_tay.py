@@ -5,10 +5,13 @@ from tensorflow.keras import datasets, models
 import cv2
 from PIL import Image
 from streamlit import session_state as session
+import module.Logo as logo
 
 st.set_page_config(page_title="Nhận diện chữ số viết tay", page_icon="🔢", layout="wide")
 
 st.markdown("# Nhận diện chữ số viết tay MNIST")
+
+logo.add_logo()
 
 OPTIMIZER = tf.keras.optimizers.Adam()
 
